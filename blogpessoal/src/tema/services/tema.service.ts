@@ -61,6 +61,14 @@ export class TemaService {
         return await this.temaRepository.save(tema);
     }
 
+    /**
+     * @desc Apaga um tema do banco de dados
+     * @param id O identificador do tema a ser apagado
+     * @returns Conteúdo vazio
+     * @throws HttpException Caso o id informado não seja encontrado
+     * @example
+     * delete(2); // Será deletado o tema com id = 2
+     */
     async delete(id: number): Promise<DeleteResult> {
 
         let buscaTema = await this.findById(id);
